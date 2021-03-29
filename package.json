@@ -2,7 +2,7 @@
   "name": "reactport",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wtekverk.github.io/Hikr",
+  "homepage": "https://glacial-wave-72926.herokuapp.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.5",
