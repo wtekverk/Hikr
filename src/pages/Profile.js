@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import ActivityCard from "../components/ActivityCard"
 
 const Profile = () => {
     return (<div className="container">
@@ -29,9 +30,9 @@ const Profile = () => {
 <br />
 <h3>Past Activities</h3>
 {/* filter through this with map of json f activeties a person has done */}
+<ActivityCard />
 
-       
-    </div>);
+  </div>);
 }
 
 
