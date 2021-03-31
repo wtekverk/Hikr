@@ -5,9 +5,10 @@ import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 const Profile = () => {
-    return (<div>
+    return (<div className="container">
+        <h1>PropName Profile</h1>
 
-<Card style={{ width: '18rem' }}>
+<Card >
   <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
   <Card.Body>
     <Card.Title>Name</Card.Title>
@@ -24,6 +25,16 @@ const Profile = () => {
 						<Nav.Link>Add Activity</Nav.Link>
 					</LinkContainer>
   </Card.Body>
+</Card>
+<br />
+<h3>Past Activities</h3>
+{/* filter through this with map of json f activeties a person has done */}
+<Card style={{ width: '18rem' }}>
+  <Card.Header>Place = Prop somethings</Card.Header>
+  <ListGroup variant="flush">
+    <ListGroup.Item>Distance = Prop Something </ListGroup.Item>
+    <ListGroup.Item>Points = prop something</ListGroup.Item>
+  </ListGroup>
 </Card>
        
     </div>);
