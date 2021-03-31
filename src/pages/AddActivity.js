@@ -1,7 +1,7 @@
 import React from 'react'
 
 const AddActivity = () => {
-    return (<div>Hello!</div>);
+    return (<div>The should be an activety add page here soon!</div>);
 }
 
 
