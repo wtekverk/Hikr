@@ -8,36 +8,40 @@ const Register = () => {
         <form className="container" >
   <div className="row">
     <div className="col">
-      <input type="text" className="form-control" placeholder="First name" />
+      <input for="firstName" type="text" className="form-control" id="firstName" placeholder="First name" />
     </div>
     <div className="col">
-      <input type="text" className="form-control" placeholder="Last name" />
+      <input for="lastName" type="text" className="form-control" id="lastName" placeholder="Last name" />
     </div>
   </div>
 
   <br />
 
   <div className="form-group row">
-    <label for="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+    <label for="Email" className="col-sm-2 col-form-label">Email</label>
     <div className="col-sm-10">
-      <input type="email" className="form-control" id="inputEmail3" placeholder="Email" />
+      <input type="email" className="form-control" id="Email" placeholder="Email" />
     </div>
   </div>
   <div className="form-group row">
-    <label for="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+    <label for="Password" className="col-sm-2 col-form-label">Password</label>
     <div className="col-sm-10">
-      <input type="password" className="form-control" id="inputPassword3" placeholder="Password" />
+      <input type="password" className="form-control" id="Password" placeholder="Password" />
     </div>
   </div>
   <div class="custom-file">
-  <input type="file" class="custom-file-input" id="customFile" />
-  <label class="custom-file-label" for="customFile">Choose Photo for Profile</label>
+  <input type="file" class="custom-file-input" id="profilePict" />
+  <label class="custom-file-label" for="profilePict">Choose Photo for Profile</label>
 </div>
+<div class="form-group">
+    <label for="bioText">Tell us a little about yourself! </label>
+    <textarea class="form-control" id="bioText" rows="3"></textarea>
+  </div>
 
 <br />
 
   <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <button type="Submit" id="finishRegistration" class="btn btn-primary">Sign in</button>
     </div>
 
   </form>

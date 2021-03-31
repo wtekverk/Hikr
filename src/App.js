@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Rules from "./pages/Rules";
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import AddActivity from "./pages/AddActivity"
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 					<Route path="/rules" component={Rules} />  
 					<Route path="/login" component={Login} />
 					<Route path="/register" component={Register} />
+					<Route path="/addActivity" component={AddActivity} />
 
 				</Switch>
 
