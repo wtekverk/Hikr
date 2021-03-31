@@ -29,13 +29,7 @@ const Profile = () => {
 <br />
 <h3>Past Activities</h3>
 {/* filter through this with map of json f activeties a person has done */}
-<Card style={{ width: '18rem' }}>
-  <Card.Header>Place = Prop somethings</Card.Header>
-  <ListGroup variant="flush">
-    <ListGroup.Item>Distance = Prop Something </ListGroup.Item>
-    <ListGroup.Item>Points = prop something</ListGroup.Item>
-  </ListGroup>
-</Card>
+
        
     </div>);
 }
