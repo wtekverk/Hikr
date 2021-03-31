@@ -3,9 +3,10 @@ import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 const NavbarOC = () => {
 	return (
-		<Navbar bg="light" expand="lg">
+		
+		<Navbar className="navbar navbar-expand-lg navbar-dark bg-dark" bg="light" expand="lg">
 			<LinkContainer to="/">
-				<Navbar.Brand>Wendy Tekverk</Navbar.Brand>
+				<Navbar.Brand>Hiker</Navbar.Brand>
 			</LinkContainer>
 
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />

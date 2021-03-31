@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import NavbarOC from "./components/NavbarOC";
+import FooterOC from "./components/FooterOC";
 import ReactDOM from "react-dom";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 import Rules from "./pages/Rules";
 import Login from "./pages/Login"
+import Register from "./pages/Register"
 
 function App() {
 	return (
@@ -17,8 +19,11 @@ function App() {
 					<Route path="/profile" component={Profile} />
 					<Route path="/rules" component={Rules} />  
 					<Route path="/login" component={Login} />
+					<Route path="/register" component={Register} />
 
 				</Switch>
+
+				<FooterOC />
 			</Router>
 		</div>
 	);
