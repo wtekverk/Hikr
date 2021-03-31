@@ -2,10 +2,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import NavbarOC from "./components/NavbarOC";
 import ReactDOM from "react-dom";
-import Profile from "./components/Profile";
-import Home from "./components/Home";
-import Rules from "./components/Rules";
-import Login from "./components/Login"
+import Profile from "./pages/Profile";
+import Home from "./pages/Home";
+import Rules from "./pages/Rules";
+import Login from "./pages/Login"
 
 function App() {
 	return (
