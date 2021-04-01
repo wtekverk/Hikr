@@ -1,39 +1,38 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card'
-import ListGroup from 'react-bootstrap/ListGroup'
+import React from "react";
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
 import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import ActivityCard from "../components/ActivityCard"
+import ActivityCard from "../components/ActivityCard";
+
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Profile = () => {
-    return (<div className="container">
-        <h1>PropName Profile</h1>
+  const { user } = useAuth0();
+  const { name, picture, email } = user;
 
-<Card >
-  <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-  <Card.Body>
-    <Card.Title>Name</Card.Title>
-    <Card.Text>
-      We bit of Bio here
-    </Card.Text>
-  </Card.Body>
-  <ListGroup className="list-group-flush">
-    <ListGroup.Item>Email</ListGroup.Item>
-    <ListGroup.Item>Score + Score #</ListGroup.Item>
-  </ListGroup>
-  <Card.Body>
-  <LinkContainer to="/addActivity">
-						<Nav.Link>Add Activity</Nav.Link>
-					</LinkContainer>
-  </Card.Body>
-</Card>
-<br />
-<h3>Past Activities</h3>
-{/* filter through this with map of json f activeties a person has done */}
-<ActivityCard />
-
-  </div>);
-}
-
+  return (
+    <div>
+      <div className="row align-items-center profile-header">
+        <div className="col-md-2 mb-3">
+          <img
+            src={picture}
+            alt="Profile"
+            className="rounded-circle img-fluid profile-picture mb-3 mb-md-0"
+          />
+        </div>
+        <div className="col-md text-center text-md-left">
+          <h2>{name}</h2>
+          <p className="lead text-muted">{email}</p>
+        </div>
+      </div>
+      <div className="row">
+        <pre className="col-12 text-light bg-dark p-4">
+          {JSON.stringify(user, null, 2)}
+        </pre>
+      </div>
+    </div>
+  );
+};
 
 export default Profile;
