@@ -1,19 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const path = require('path');
+const router = require("./routes/api")
+const compression = require("compression")
 
-const db = require("../models");
 
 const app = express();
 
-app.use(logger("dev"));
 app.use(bodyParser.json());
-
+app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
+
+app.use('/', router);
 
 mongoose.Promise = global.Promise;
 mongoose.connect(
@@ -28,30 +29,12 @@ mongoose.connect(
   console.log("connected to MongoDB")
 );
 
-app.get("/posts", (req, res) => {
-  db.Post.find({})
-    .then(dbPost => {
-      res.json(dbPost);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
-
-app.post("/submit", ({ body }, res) => {
-  db.Post.create(body)
-    .then(dbUser => {
-      res.json(dbUser);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`app running on port ${PORT}`)
 });
 
+
+module.exports=app;
 
