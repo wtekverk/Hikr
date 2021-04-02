@@ -17,6 +17,9 @@ const FormInput = () => {
         dispatch(createPost(postData))
     }
 
+    handleInputChange = (e) => {
+
+    }
 
 
 
