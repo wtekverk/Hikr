@@ -1,8 +1,15 @@
 import React from 'react'
 import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import {useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
+
 
 const Home = () => {
+
+    const post = useSelector((state) => state.posts)
+
+
     return (<div>
 
 <div className="jumbotron jumbotron-fluid container">
@@ -19,7 +26,8 @@ const Home = () => {
 </ul>
 <LinkContainer to="/addActivity">
 	<Nav.Link className="btn bn-light">Add Activity</Nav.Link>
-</LinkContainer>
+</LinkContainer> 
+
 </div>
 
 
