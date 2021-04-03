@@ -1,25 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Provider} from 'react-redux'
+//import {Provider} from 'react-redux'
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import reducers from "./reducers"
+//import reducers from "./reducers"
+
 // import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 
 
-const store = createStore(reducers, compose(applyMiddleware(thunk)))
+//const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 ReactDOM.render(
-  <Provider store={store}>
-  <Router>
-   
-      <App />
-   
-  </Router>
-  </Provider>,
+
+    <App/>,
 
   document.getElementById("root")
 );
