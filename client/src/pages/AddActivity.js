@@ -8,7 +8,7 @@ const AddActivity = () => {
     return (<div>
         <br />
 
-        <CreatePostForm/> 
+      <div>Hellooooooo </div>
 
 
     </div>);

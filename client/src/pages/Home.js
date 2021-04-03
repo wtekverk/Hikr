@@ -1,14 +1,21 @@
 import React from 'react'
 import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import {useSelector} from 'react-redux';
-import {useDispatch} from 'react-redux';
+//import {useSelector} from 'react-redux';
+//import {useDispatch} from 'react-redux';
+import {useStoreContext} from '../utils/GlobalState'
+import API from "../utils/API.js";
 
+
+const readAPI = () =>{
+  console.log(API.getPosts());
+  //return API.getPosts();
+}
 
 const Home = () => {
 
-    const post = useSelector((state) => state.posts)
-
+    //const post = useSelector((state) => state.posts)
+    readAPI();
 
     return (<div>
 
