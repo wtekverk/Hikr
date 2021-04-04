@@ -4,8 +4,8 @@ import {
   REMOVE_POST,
   UPDATE_POSTS,
   ADD_POST,
- 
-  LOADING
+  LOADING,
+  SET_ERROR,
 } from "./actions";
 
 const StoreContext = createContext();
@@ -13,44 +13,48 @@ const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-  case SET_CURRENT_POST:
-    return {
-      ...state,
-      currentPost: action.post,
-      loading: false
-    };
+    case SET_CURRENT_POST:
+      return {
+        ...state,
+        currentPost: action.post,
+        loading: false,
+      };
 
-  case UPDATE_POSTS:
-    return {
-      ...state,
-      posts: [...action.posts],
-      loading: false
-    };
+    case UPDATE_POSTS:
+      return {
+        ...state,
+        posts: [...action.posts],
+        loading: false,
+      };
 
-  case ADD_POST:
-    return {
-      ...state,
-      posts: [action.post, ...state.posts],
-      loading: false
-    };
+    case ADD_POST:
+      return {
+        ...state,
+        posts: [action.post, ...state.posts],
+        loading: false,
+      };
 
-  case REMOVE_POST:
-    return {
-      ...state,
-      posts: state.posts.filter((post) => {
-        return post._id !== action._id; 
-      })
-    };
+    case REMOVE_POST:
+      return {
+        ...state,
+        posts: state.posts.filter((post) => {
+          return post._id !== action._id;
+        }),
+      };
 
+    case LOADING:
+      return {
+        ...state,
+        loading: true,
+      };
+    case SET_ERROR:
+      return {
+        ...state,
+        posts: action.error,
+      };
 
-  case LOADING:
-    return {
-      ...state,
-      loading: true
-    };
-
-  default:
-    return state;
+    default:
+      return state;
   }
 };
 
@@ -61,9 +65,13 @@ const StoreProvider = ({ value = [], ...props }) => {
       _id: 0,
       body: "",
       activity: "",
-      duration: ""
+      duration: "",
+      creator: "",
+      points: "",
+      fileUpload: "",
+      likes: "",
     },
-    loading: false
+    loading: false,
   });
 
   return <Provider value={[state, dispatch]} {...props} />;

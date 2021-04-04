@@ -1,20 +1,19 @@
-import mongoose from 'mongoose';
+const { model, Schema } = require("mongoose");
 
-
-const postSchema = mongoose.Schema({
-   body: String,
-   activity: String,
-   duration: String,
-   creator: String,
-   points: Number,
-   createdAt: {
-     type: Date,
-     default: new Date()
-   }
+const postSchema = Schema({
+  body: String,
+  activity: String,
+  duration: String,
+  creator: String,
+  points: Number,
+  fileUpload: String,
+  likes: { type: Number, default: 0 },
+  createdAt: {
+    type: Date,
+    default: new Date(),
+  },
 });
+s;
+const PostMessage = model("PostMessage", postSchema);
 
-
-
-const PostMessage = mongoose.model("PostMessage", postSchema);
-
-export default PostMessage;
+module.exports = PostMessage;
