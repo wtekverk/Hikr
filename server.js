@@ -1,10 +1,10 @@
-const path = require('path')
+// const path = require("path");
 const express = require("express");
-const bodyParser = require( "body-parser");
-const mongoose = require( "mongoose");
-const cors = require( "cors");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const cors = require("cors");
 
-const postRoutes = require( "./routes/api.js");
+const postRoutes = require("./routes/api.js");
 
 const app = express();
 
@@ -17,7 +17,7 @@ const CONNECTION_URL =
   "mongodb+srv://curtishp04:cpsp1994!@cluster0.cg3z6.mongodb.net/Hikr?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 3001;
 
-if(process.env.NODE_ENV === "production"){
+if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 //app.use(express.static(path.join(__dirname, 'public')));

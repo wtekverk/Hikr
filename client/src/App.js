@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 //import {useDispatch} from "react-redux";
@@ -11,7 +11,8 @@ import Register from "./pages/Register";
 import AddActivity from "./pages/AddActivity";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
-import {StoreProvider} from './utils/GlobalState';
+import PostsPage from "./pages/Posts";
+import { StoreProvider as Store } from "./utils/GlobalState";
 
 //import "./App.css";
 
@@ -28,24 +29,24 @@ const App = () => {
   // }
 
   return (
-   
     <Router>
-      <StoreProvider>
-    <div id="app" className="d-flex flex-column h-100">
-      <NavAuth />
-      <div className="container flex-grow-1">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/add" component={AddActivity} />
-          <Route path="/register" component={Register} />
-          <Route path="/rules" component={Rules} />
-        </Switch>
-      </div>
-      <FooterOC/>
-    </div>
-    </StoreProvider>
-    </Router> 
+      <Store>
+        <div id="app" className="d-flex flex-column h-100">
+          <NavAuth />
+          <div className="container flex-grow-1">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/posts" component={PostsPage} />
+              <Route path="/profile" component={Profile} />
+              <Route path="/add" component={AddActivity} />
+              <Route path="/register" component={Register} />
+              <Route path="/rules" component={Rules} />
+            </Switch>
+          </div>
+          <FooterOC />
+        </div>
+      </Store>
+    </Router>
   );
 };
 
