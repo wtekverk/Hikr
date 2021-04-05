@@ -11,7 +11,7 @@ import Register from "./pages/Register";
 import AddActivity from "./pages/AddActivity";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
-import PostsPage from "./pages/Posts";
+import Posts from "./pages/Posts";
 import { StoreProvider as Store } from "./utils/GlobalState";
 
 //import "./App.css";
@@ -36,7 +36,7 @@ const App = () => {
           <div className="container flex-grow-1">
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/posts" component={PostsPage} />
+              <Route path="/posts" component={Posts} />
               <Route path="/profile" component={Profile} />
               <Route path="/add" component={AddActivity} />
               <Route path="/register" component={Register} />

@@ -23,14 +23,24 @@ const getPost = async (req, res) => {
 };
 
 const createPost = async (req, res) => {
-  const { title, message, selectedFile, creator, tags } = req.body;
+  const {
+    body,
+    creator,
+    points,
+    fileUpload,
+    activity,
+    duration,
+    likes,
+  } = req.body;
 
   const newPostMessage = new PostMessage({
-    title,
-    message,
-    selectedFile,
+    body,
     creator,
-    tags,
+    points,
+    fileUpload,
+    activity,
+    duration,
+    likes,
   });
 
   try {
@@ -44,12 +54,29 @@ const createPost = async (req, res) => {
 
 const updatePost = async (req, res) => {
   const { id } = req.params;
-  const { title, message, creator, selectedFile, tags } = req.body;
+  const {
+    body,
+    creator,
+    points,
+    fileUpload,
+    activity,
+    duration,
+    likes,
+  } = req.body;
 
   if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).send(`No post with id: ${id}`);
 
-  const updatedPost = { creator, title, message, tags, selectedFile, _id: id };
+  const updatedPost = {
+    body,
+    creator,
+    points,
+    fileUpload,
+    activity,
+    duration,
+    likes,
+    _id: id,
+  };
 
   await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
 
@@ -77,7 +104,7 @@ const likePost = async (req, res) => {
 
   const updatedPost = await PostMessage.findByIdAndUpdate(
     id,
-    { likeCount: post.likeCount + 1 },
+    { likes: post.likeCount + 1 },
     { new: true }
   );
 
