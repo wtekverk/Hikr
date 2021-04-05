@@ -1,8 +1,30 @@
 html body {
     background-image: url("./assets/images/bghikr.jpeg");
-    
 }
+
 h1 {
     color: #84a98c;
     text-align: center;
 }
+
+.btn-primary {
+    border-radius: 0%;
+    color:  #f4f1de;
+    background-color: black;
+
+}
+
+
+.navbar {
+    padding: 10px;
+    background-color: #354F52;   
+}
+
+a {
+    color: white
+}
+
+.card {
+    background-color: #f4f1D;
+}
+
