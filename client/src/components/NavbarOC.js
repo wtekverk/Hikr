@@ -4,7 +4,7 @@ import { LinkContainer } from "react-router-bootstrap";
 const NavbarOC = () => {
 	return (
 		
-		<Navbar className="navbar navbar-expand-lg navbar-dark bg-dark" bg="light" expand="lg">
+		<Navbar className="navbar navbar-expand-lg " variant="dark" expand="lg">
 			<LinkContainer to="/">
 				<Navbar.Brand>Hiker</Navbar.Brand>
 			</LinkContainer>
