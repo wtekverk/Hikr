@@ -24,7 +24,6 @@ function Posts() {
 
   return (
     <div>
-      <h1>HIKR USER POSTS</h1>
       {state.posts.length ? (
         <PostsList>
           {state.posts.map((post) => (
