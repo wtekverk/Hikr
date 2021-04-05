@@ -16,7 +16,7 @@ const reducer = (state, action) => {
     case SET_CURRENT_POST:
       return {
         ...state,
-        currentPost: action.post,
+        currentPosts: action.payload,
         loading: false,
       };
 

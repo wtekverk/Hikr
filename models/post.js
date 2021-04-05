@@ -1,11 +1,11 @@
 const { model, Schema } = require("mongoose");
 
 const postSchema = Schema({
-  body: String,
+  creator: String,
   activity: String,
   duration: String,
-  creator: String,
   points: Number,
+  body: String,
   fileUpload: String,
   likes: { type: Number, default: 0 },
   createdAt: {
@@ -13,7 +13,6 @@ const postSchema = Schema({
     default: new Date(),
   },
 });
-s;
 const PostMessage = model("PostMessage", postSchema);
 
 module.exports = PostMessage;
