@@ -4,7 +4,7 @@ const FooterOC = () => {
   return (
     <div>
       <footer>
-        <nav className="navbar fixed-bottom navbar-dark bg-dark">
+        <nav className="navbar fixed-bottom ">
           <div className="container-fluid">
             <a
               className="navbar-brand"
