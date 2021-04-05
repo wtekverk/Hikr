@@ -1,49 +1,44 @@
-import React, { useEffect, useContext } from "react";
-
-import axios from "axios";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useStoreContext as Context } from "../utils/GlobalState";
-import DisplayPost from "../components/displayPosts";
+import { LOADING, UPDATE_POSTS, SET_ERROR } from "../utils/actions";
 import API from "../utils/API";
+import { postsList, postsListItem } from "../components/postsList";
 
-const PostsPage = () => {
+function Posts() {
   const [state, dispatch] = Context();
 
   useEffect(() => {
+    dispatch({ type: LOADING });
     API.getPosts()
       .then((response) => {
         console.log(response);
         const postsData = response.data;
-        dispatch({ type: "SET_CURRENT_POST", payload: postsData });
+        dispatch({ type: UPDATE_POSTS, posts: postsData });
       })
       .catch((error) => {
-        dispatch({ type: "SET_ERROR", payload: error });
+        dispatch({ type: SET_ERROR, posts: error });
       });
   }, []);
 
-  // if (state.error) {
-  //   posts = (
-  //     <p>
-  //       Something went wrong: <span>{state.error}</span>
-  //     </p>
-  //   );
-  // }
-  return !state.error && state.currentPosts ? (
-    state.currentPosts.map((post) => {
-      return (
-        <DisplayPost
-          key={post.id}
-          body={post.body}
-          creator={post.creator}
-          points={post.points}
-          fileUpload={post.fileUpload}
-          activity={post.activity}
-          duration={post.duration}
-          likes={post.likes}
-        />
-      );
-    })
-  ) : (
-    <p>Loading...</p>
+  return (
+    <div>
+      <h1>HIKR USER POSTS</h1>
+      {state.posts.length ? (
+        <postsList>
+          {state.posts.map((post) => (
+            <postsListItem>
+              <img src={post.fileUpload} />
+              <Link to={`/posts/${post._id}`}>
+                {post.activity} submitted by {post.creator}
+              </Link>
+            </postsListItem>
+          ))}
+        </postsList>
+      ) : (
+        <h4>No posts to view!</h4>
+      )}
+    </div>
   );
-};
-export default PostsPage;
+}
+export default Posts;
