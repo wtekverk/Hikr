@@ -6,11 +6,12 @@ import DisplayPost from "../components/displayPosts";
 import API from "../utils/API";
 
 const PostsPage = () => {
-  const [state, dispatch] = useContext(Context);
+  const [state, dispatch] = Context();
 
   useEffect(() => {
     API.getPosts()
       .then((response) => {
+        console.log(response);
         const postsData = response.data;
         dispatch({ type: "SET_CURRENT_POST", payload: postsData });
       })
@@ -19,18 +20,15 @@ const PostsPage = () => {
       });
   }, []);
 
-  let posts = <p>Loading...</p>;
-
-  if (state.error) {
-    posts = (
-      <p>
-        Something went wrong: <span>{state.error}</span>
-      </p>
-    );
-  }
-
-  if (!state.error && state.posts) {
-    posts = state.posts.map((post) => {
+  // if (state.error) {
+  //   posts = (
+  //     <p>
+  //       Something went wrong: <span>{state.error}</span>
+  //     </p>
+  //   );
+  // }
+  return !state.error && state.currentPosts ? (
+    state.currentPosts.map((post) => {
       return (
         <DisplayPost
           key={post.id}
@@ -43,9 +41,9 @@ const PostsPage = () => {
           likes={post.likes}
         />
       );
-    });
-  }
-
-  return { posts };
+    })
+  ) : (
+    <p>Loading...</p>
+  );
 };
 export default PostsPage;

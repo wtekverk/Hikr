@@ -4,15 +4,14 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-const postRoutes = require("./routes/api.js");
-
 const app = express();
 
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
-app.use("/posts", postRoutes);
+app.use("/api", require("./routes/api"));
 
+// const CONNECTION_URL = "mongodb://localhost/Hikr";
 const CONNECTION_URL =
   "mongodb+srv://curtishp04:cpsp1994!@cluster0.cg3z6.mongodb.net/Hikr?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 3001;
