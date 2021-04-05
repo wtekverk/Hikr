@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import Form from "react-bootstrap/Form";
 import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-
-import React, { useRef } from "react";
-import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_POST, LOADING } from "../../utils/actions";
-import API from "../../utils/API";
+import { useStoreContext } from "../utils/GlobalState";
+import { ADD_POST, LOADING } from "../utils/actions";
+import API from "../utils/API";
 
 function PostForm() {
   const activityRef = useRef();
   const bodyRef = useRef();
   const creatorRef = useRef();
-  const durationRef = userRef();
+  const durationRef = useRef();
   const pointsRef = useRef();
+  const titleRef = useRef();
+  const authorRef = useRef();
   const [state, dispatch] = useStoreContext();
 
   const handleSubmit = (e) => {
