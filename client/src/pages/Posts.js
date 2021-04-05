@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useStoreContext as Context } from "../utils/GlobalState";
 import { LOADING, UPDATE_POSTS, SET_ERROR } from "../utils/actions";
 import API from "../utils/API";
-import { postsList, postsListItem } from "../components/postsList";
+import { PostsList, PostsListItem } from "../components/postsList";
+import LOGO from "../assets/images/logo.png";
 
 function Posts() {
   const [state, dispatch] = Context();
@@ -25,16 +26,16 @@ function Posts() {
     <div>
       <h1>HIKR USER POSTS</h1>
       {state.posts.length ? (
-        <postsList>
+        <PostsList>
           {state.posts.map((post) => (
-            <postsListItem>
-              <img src={post.fileUpload} />
+            <PostsListItem>
+              <img src={LOGO} />
               <Link to={`/posts/${post._id}`}>
                 {post.activity} submitted by {post.creator}
               </Link>
-            </postsListItem>
+            </PostsListItem>
           ))}
-        </postsList>
+        </PostsList>
       ) : (
         <h4>No posts to view!</h4>
       )}
