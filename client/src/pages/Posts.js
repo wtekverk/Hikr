@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useStoreContext as Context } from "../utils/GlobalState";
 import { LOADING, UPDATE_POSTS, SET_ERROR } from "../utils/actions";
 import API from "../utils/API";
-import { PostsList, PostsListItem } from "../components/postsList";
+import { PostsList, PostsListItem } from "../components";
 import LOGO from "../assets/images/logo.png";
 
 function Posts() {
