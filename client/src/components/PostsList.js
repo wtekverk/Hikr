@@ -1,7 +1,7 @@
 import React from "react";
 
 // This file exports both the List and ListItem components
-export function PostsList({ children }) {
+export default function PostsList({ children }) {
   return (
     <div>
       <br />
@@ -11,6 +11,7 @@ export function PostsList({ children }) {
   );
 }
 
-export function PostsListItem({ children }) {
+export default function PostsListItem({ children }) {
   return <div>{children}</div>;
 }
+
