@@ -2,7 +2,7 @@
   "name": "reactport",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  
   "homepage": "https://glacial-wave-72926.herokuapp.com/",
   "dependencies": {
     "@auth0/auth0-react": "^1.4.0",
