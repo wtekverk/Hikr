@@ -2,13 +2,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const cors = require("cors");
+
 
 const app = express();
 
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
+
 app.use("/api", require("./routes/api"));
 
 // const CONNECTION_URL = "mongodb://localhost/Hikr";
