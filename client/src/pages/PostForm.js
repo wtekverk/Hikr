@@ -43,33 +43,38 @@ function PostForm() {
 
   return (
     <div>
-      <div className="jumbotron">
-        <img
-          className="img-fluid img-thumbnail"
-          src="https://images.pexels.com/photos/459688/pexels-photo-459688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-        />
-      </div>
+      <br />
       <h1>Create a blog post</h1>
-      <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
+      <form className="form-group" onSubmit={handleSubmit}>
         <input
-          className="form-control mb-5"
+          className="form-control row"
           required
-          ref={titleRef}
+          ref={activityRef}
           placeholder="Title"
         />
+        <input
+          className="form-control row"
+          ref={creatorRef}
+          placeholder="Screen Name"
+        />
+        <input
+          className="form-control row"
+          ref={durationRef}
+          placeholder="What is the duration (in minutes)"
+        />
+        <input
+          className="form-control row"
+          ref={pointsRef}
+          placeholder="How many points is this activity worth?"
+        />
         <textarea
-          className="form-control mb-5"
+          className="form-control row"
           required
           ref={bodyRef}
           placeholder="Body"
         />
-        <input
-          className="form-control mb-5"
-          ref={authorRef}
-          placeholder="Screen name"
-        />
         <button
-          className="btn btn-success mt-3 mb-5"
+          className="btn btn-success row"
           disabled={state.loading}
           type="submit"
         >

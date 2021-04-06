@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useStoreContext as Context } from "../utils/GlobalState";
 import { LOADING, UPDATE_POSTS, SET_ERROR } from "../utils/actions";
 import API from "../utils/API";
@@ -28,10 +27,28 @@ function Posts() {
         <PostsList>
           {state.posts.map((post) => (
             <PostsListItem>
-              <img src={LOGO} />
-              <Link to={`/posts/${post._id}`}>
-                {post.activity} submitted by {post.creator}
-              </Link>
+              <div className="card col-sm-12 col-md-3">
+                <img
+                  src={LOGO}
+                  className="card-img-top"
+                  alt="site icon of mtns"
+                />
+                <div>
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item">
+                      ACTIVITY: {post.activity}
+                    </li>
+                    <li className="list-group-item">
+                      DESCRIPTION: {post.body}{" "}
+                    </li>
+                    <li className="list-group-item">CREATOR: {post.creator}</li>
+                    <li className="list-group-item">POINTS: {post.points}</li>
+                    <li className="list-group-item">
+                      DURATION: {post.duration}
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </PostsListItem>
           ))}
         </PostsList>
