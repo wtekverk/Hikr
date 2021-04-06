@@ -1,11 +1,12 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+
 const NavbarOC = () => {
   return (
     <Navbar className="navbar navbar-expand-lg " variant="dark" expand="lg">
       <LinkContainer to="/">
-        <Navbar.Brand>Hiker</Navbar.Brand>
+        <Navbar.Brand>Hikr</Navbar.Brand>
       </LinkContainer>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

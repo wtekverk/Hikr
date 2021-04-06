@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-//import {getPosts} from "./actions/posts"
+import ProtectedRoute from "./components/auth0/protected-route";
 import NavAuth from "./components/NavAuth";
 import FooterOC from "./components/FooterOC";
 import Loading from "./components/Loading";
@@ -13,16 +13,11 @@ import { StoreProvider as Store } from "./utils/GlobalState";
 //import "./App.css";
 
 const App = () => {
-  // const { isLoading } = useAuth0();
-  // const dispatch = useDispatch();
+  const { isLoading } = useAuth0();
 
-  // useEffect(() => {
-  //   dispatch(getPosts());
-  // },[dispatch]);
-
-  // if (isLoading) {
-  //   return <Loading />;
-  // }
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <Router>
@@ -33,8 +28,8 @@ const App = () => {
             <Switch>
               <Route exact path="/" component={Posts} />
               <Route path="/posts" component={Posts} />
-              <Route path="/profile" component={Profile} />
-              <Route path="/add" component={PostForm} />
+              <ProtectedRoute path="/profile" component={Profile} />
+              <ProtectedRoute path="/add" component={PostForm} />
             </Switch>
           </div>
           <FooterOC />

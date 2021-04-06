@@ -26,7 +26,7 @@ function Posts() {
       {state.posts.length ? (
         <PostsList>
           {state.posts.map((post) => (
-            <PostsListItem>
+            <PostsListItem key={post._id}>
               <div className="card col-sm-12 col-md-3">
                 <img
                   src={LOGO}
