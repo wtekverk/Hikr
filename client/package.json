@@ -2,8 +2,8 @@
   "name": "reactport",
   "version": "0.1.0",
   "private": true,
-  
-  "homepage": "https://glacial-wave-72926.herokuapp.com/",
+  "proxy": "http://localhost:3001",
+  "homepage": "https://agile-mesa-37187.herokuapp.com/",
   "dependencies": {
     "@auth0/auth0-react": "^1.4.0",
     "@material-ui/core": "^4.11.3",

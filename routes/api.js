@@ -7,11 +7,13 @@ const {
   updatePost,
   likePost,
   deletePost,
+  topThree
 } = require("../controllers/posts.js");
 
 const router = express.Router();
 
 router.get("/posts", getPosts);
+
 router.post("/posts", createPost);
 router.get("/posts/:id", getPost);
 router.patch("/posts/:id", updatePost);
