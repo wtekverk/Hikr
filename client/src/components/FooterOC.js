@@ -10,6 +10,7 @@ const FooterOC = () => {
               className="navbar-brand"
               href="https://github.com/mfranl"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Maggie
             </a>
@@ -17,6 +18,7 @@ const FooterOC = () => {
               className="navbar-brand"
               href="https://github.com/mac-attac"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Steve
             </a>
@@ -24,6 +26,7 @@ const FooterOC = () => {
               className="navbar-brand"
               href="https://github.com/CurtisPazdar"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Curtis
             </a>
@@ -31,6 +34,7 @@ const FooterOC = () => {
               className="navbar-brand"
               href="https://github.com/wtekverk"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Wendy
             </a>

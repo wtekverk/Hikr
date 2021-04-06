@@ -4,13 +4,16 @@ import "./index.css";
 import "./style.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Auth0ProviderWithHistory from "../src/components/auth0/auth0-provider-with-history";
 
 // import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 
 //const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 ReactDOM.render(
-  <App />,
+  <Auth0ProviderWithHistory>
+    <App />,
+  </Auth0ProviderWithHistory>,
 
   document.getElementById("root")
 );

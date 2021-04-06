@@ -1,10 +1,9 @@
 import React, { useRef } from "react";
-import Form from "react-bootstrap/Form";
-import { Navbar, Nav } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
 import { ADD_POST, LOADING } from "../utils/actions";
 import API from "../utils/API";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
+import Loading from "../components/Loading";
 
 function PostForm() {
   const activityRef = useRef();
@@ -12,8 +11,6 @@ function PostForm() {
   const creatorRef = useRef();
   const durationRef = useRef();
   const pointsRef = useRef();
-  const titleRef = useRef();
-  const authorRef = useRef();
   const [state, dispatch] = useStoreContext();
 
   const handleSubmit = (e) => {
@@ -85,4 +82,8 @@ function PostForm() {
   );
 }
 
-export default PostForm;
+// export default PostForm;
+
+export default withAuthenticationRequired(PostForm, {
+  onRedirecting: () => <Loading />,
+});
